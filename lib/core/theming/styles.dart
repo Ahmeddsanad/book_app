@@ -17,4 +17,10 @@ class TextStyles {
     letterSpacing: 1.1,
     color: ColorsManager.darkGray,
   );
+  static TextStyle textStyle24DarkGraySemiBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    letterSpacing: 1.1,
+    color: ColorsManager.darkGray,
+  );
 }

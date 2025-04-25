@@ -35,8 +35,10 @@ dependencies:
   flutter_screenutil: ^5.9.3
   # flutter splash native package used to handle native splash screen for android and ios
   flutter_native_splash: ^2.4.6
-  # cached network image package used to handle cached images
+  # cached network image package used to handle cached images in offline mode
   cached_network_image: ^3.4.1
+  # font awesome flutter package used to handle font awesome icons instead of material icons
+  font_awesome_flutter: ^10.8.0
 
   
 

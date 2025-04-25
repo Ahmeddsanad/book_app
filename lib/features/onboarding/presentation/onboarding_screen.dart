@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:book_app/core/helpers/extensions.dart';
+import 'package:book_app/core/routing/router.dart';
 import 'package:book_app/core/theming/colors.dart';
 import 'package:book_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +57,7 @@ class OnboardingScreen extends StatelessWidget {
               child: SizedBox(
                 height: 40.h,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => context.pushNamed(Routes.homeScreen),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: ColorsManager.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.r)),
