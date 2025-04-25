@@ -35,6 +35,9 @@ dependencies:
   flutter_screenutil: ^5.9.3
   # flutter splash native package used to handle native splash screen for android and ios
   flutter_native_splash: ^2.4.6
+  # cached network image package used to handle cached images
+  cached_network_image: ^3.4.1
+
   
 
 dev_dependencies:
@@ -70,10 +73,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: BebasNeue
+      fonts:
+        - asset: assets/fonts/BebasNeue-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
