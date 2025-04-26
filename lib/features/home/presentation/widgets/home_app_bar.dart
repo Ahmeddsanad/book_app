@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 part of '../home.dart';
 
 class HomeAppBar extends StatelessWidget {
@@ -18,6 +20,14 @@ class HomeAppBar extends StatelessWidget {
           decoration: BoxDecoration(
             color: ColorsManager.lightGray,
             borderRadius: BorderRadius.circular(12.r),
+            boxShadow: [
+              BoxShadow(
+                offset: const Offset(0, 0),
+                blurRadius: 2,
+                color: Colors.black.withOpacity(0.3),
+                blurStyle: BlurStyle.outer,
+              ),
+            ],
           ),
           child: Icon(FontAwesomeIcons.magnifyingGlass),
         ),

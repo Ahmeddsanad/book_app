@@ -20,6 +20,7 @@ class BooksApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: ColorsManager.primary,
           scaffoldBackgroundColor: Colors.white,
+          fontFamily: 'Alkarta',
         ),
         onGenerateRoute: appRouter.generateRoute,
         initialRoute: Routes.onBoardingScreen,

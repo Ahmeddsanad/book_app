@@ -17,10 +17,30 @@ class TextStyles {
     letterSpacing: 1.1,
     color: ColorsManager.darkGray,
   );
+
+  static TextStyle textStyle14DarkGraySemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+
+    color: ColorsManager.darkGray,
+  );
+
+  static TextStyle textStyle12DarkGrayMedium = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.medium,
+
+    color: ColorsManager.darkGray,
+  );
+
   static TextStyle textStyle24DarkGraySemiBold = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeightHelper.semiBold,
     letterSpacing: 1.1,
     color: ColorsManager.darkGray,
+  );
+
+  static TextStyle textStyle12DarkGrayShade600 = TextStyle(
+    fontSize: 12.sp,
+    color: Colors.grey.shade600,
   );
 }
