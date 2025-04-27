@@ -12,7 +12,9 @@ class HomeAppBar extends StatelessWidget {
       children: [
         Text(
           'Nagwa Books',
-          style: TextStyles.textStyle24DarkGraySemiBold.copyWith(fontFamily: 'BebasNeue'),
+          style: TextStyles.textStyle24DarkGraySemiBold.copyWith(
+            fontFamily: 'BebasNeue',
+          ),
         ),
         Container(
           width: 40.w,

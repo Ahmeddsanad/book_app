@@ -28,7 +28,11 @@ class BookTitleAndRating extends StatelessWidget {
               ),
             ),
             horizontalSpacer(2),
-            Icon(FontAwesomeIcons.solidStar, color: ColorsManager.yellow, size: 12.sp),
+            Icon(
+              FontAwesomeIcons.solidStar,
+              color: ColorsManager.yellow,
+              size: 12.sp,
+            ),
           ],
         ),
       ],

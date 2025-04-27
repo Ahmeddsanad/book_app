@@ -1,7 +1,9 @@
 part of '../home.dart';
 
 class BookInfoTile extends StatelessWidget {
-  const BookInfoTile({super.key});
+  const BookInfoTile({super.key, required this.bookInfo});
+
+  final BookEntity bookInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class BookInfoTile extends StatelessWidget {
       builder: (context, state) {
         return Row(
           children: [
-            BookCoverImage(),
+            BookCoverImage(imageUrl: bookInfo.image),
             horizontalSpacer(8),
             Expanded(
               flex: 2,
@@ -20,21 +22,24 @@ class BookInfoTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Title and Rating
-                    BookTitleAndRating(title: 'The Secret of a Happy'),
+                    BookTitleAndRating(title: bookInfo.bookTitle),
 
                     verticalSpacer(4),
 
                     // Author
-                    Text('William Shakespeare', style: TextStyles.textStyle12DarkGrayShade600),
+                    Text(bookInfo.author, style: TextStyles.textStyle12DarkGrayShade600),
 
                     verticalSpacer(6),
 
                     // Description
                     Text(
-                      'William Shakespeare[a] (c. 23 April 1564[b] – 23 April 1616)[c] was an English playwright, poet and actor. He is widely regarded as the greatest writer in the English language and the world\'s pre-eminent dramatist. He is often called England\'s national poet William Shakespeare[a] (c. 23 April 1564[b] – 23 April 1616)[c] was an English playwright, poet and actor. He is widely regarded as the greatest writer in the English language and the world\'s pre-eminent dramatist. He is often called England\'s national poet',
+                      bookInfo.summary,
                       style: TextStyle(fontSize: 12.sp, color: Colors.black),
-                      maxLines: cubit.isExpanded ? null : 3,
-                      overflow: cubit.isExpanded ? TextOverflow.visible : TextOverflow.ellipsis,
+                      maxLines: cubit.expandedBooks[bookInfo.bookId] ?? false ? null : 3,
+                      overflow:
+                          cubit.expandedBooks[bookInfo.bookId] ?? false
+                              ? TextOverflow.visible
+                              : TextOverflow.ellipsis,
                     ),
 
                     verticalSpacer(6),
@@ -53,11 +58,15 @@ class BookInfoTile extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
                           ),
                         ),
-                        onPressed: () => cubit.toggleDescription(),
+                        onPressed: () => cubit.toggleDescription(bookInfo.bookId),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Text(cubit.isExpanded ? 'Read Less' : 'Read More'),
+                            Text(
+                              cubit.expandedBooks[bookInfo.bookId] ?? false
+                                  ? 'Read Less'
+                                  : 'Read More',
+                            ),
                             horizontalSpacer(6),
                             Container(
                               height: 20.h,
@@ -67,7 +76,7 @@ class BookInfoTile extends StatelessWidget {
                                 color: ColorsManager.white,
                               ),
                               child: Icon(
-                                cubit.isExpanded
+                                cubit.expandedBooks[bookInfo.bookId] ?? false
                                     ? FontAwesomeIcons.arrowUp
                                     : FontAwesomeIcons.arrowDown,
                                 size: 12.sp,

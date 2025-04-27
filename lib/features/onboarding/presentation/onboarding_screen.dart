@@ -20,7 +20,12 @@ class OnboardingScreen extends StatelessWidget {
             Stack(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 25.h, bottom: 120.h, left: 20.w, right: 20.w),
+                  padding: EdgeInsets.only(
+                    top: 25.h,
+                    bottom: 120.h,
+                    left: 20.w,
+                    right: 20.w,
+                  ),
                   child: Container(
                     width: double.infinity,
                     height: 600.h,
@@ -60,11 +65,15 @@ class OnboardingScreen extends StatelessWidget {
                   onPressed: () => context.pushNamed(Routes.homeScreen),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: ColorsManager.white,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.r)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24.r),
+                    ),
                   ),
                   child: Text(
                     'Get Started',
-                    style: TextStyles.textStyle18DarkGraySemiBold.copyWith(fontFamily: 'BebasNeue'),
+                    style: TextStyles.textStyle18DarkGraySemiBold.copyWith(
+                      fontFamily: 'BebasNeue',
+                    ),
                   ),
                 ),
               ),

@@ -1,7 +1,9 @@
 part of '../home.dart';
 
 class BookCoverImage extends StatelessWidget {
-  const BookCoverImage({super.key});
+  const BookCoverImage({super.key, required this.imageUrl});
+
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +14,7 @@ class BookCoverImage extends StatelessWidget {
           topLeft: Radius.circular(12.r),
           bottomLeft: Radius.circular(12.r),
         ),
-        child: CachedNetworkImage(
-          imageUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg',
-          fit: BoxFit.cover,
-        ),
+        child: CachedNetworkImage(imageUrl: imageUrl, fit: BoxFit.cover),
       ),
     );
   }
