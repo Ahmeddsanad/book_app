@@ -37,9 +37,7 @@ class BookModel extends BookEntity {
          image: formats?.imageJpeg ?? 'https://edit.org/images/cat/book-covers-big-2019101610.jpg',
          bookTitle: title ?? 'No Title Available',
          author:
-             (authors != null && authors.isNotEmpty)
-                 ? authors.first.name ?? 'No Author Available'
-                 : 'No Author Available',
+             (authors != null && authors.isNotEmpty) ? authors.first.name : 'No Author Available',
          summary:
              (summaries != null && summaries.isNotEmpty) ? summaries.first : 'No Summary Available',
        );

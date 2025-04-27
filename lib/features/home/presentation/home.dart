@@ -1,7 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-import 'dart:developer';
-
 import 'package:book_app/core/theming/colors.dart';
 import 'package:book_app/core/theming/spacing.dart';
 import 'package:book_app/core/theming/styles.dart';
