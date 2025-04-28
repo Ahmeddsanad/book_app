@@ -43,11 +43,11 @@ List<BookEntity> getBooksList(Map<String, dynamic> data) {
           try {
             return BookModel.fromJson(item);
           } catch (e) {
-            print("Error during BookModel.fromJson: $e, item: $item");
+            log("Error during BookModel.fromJson: $e, item: $item");
             return null;
           }
         } else {
-          print("Warning: Item in 'results' is not a Map: $item");
+          log("Warning: Item in 'results' is not a Map: $item");
           return null;
         }
       })

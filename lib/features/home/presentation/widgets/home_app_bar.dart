@@ -18,7 +18,7 @@ class HomeAppBar extends StatelessWidget {
         verticalSpacer(10.h),
         TextFormField(
           controller: context.read<HomeCubit>().searchController,
-          onFieldSubmitted: (value) => context.read<HomeCubit>().onSearchChanged(),
+          onChanged: (value) => context.read<HomeCubit>().onSearchChanged(),
           decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.r)),
             hintText: 'Search',

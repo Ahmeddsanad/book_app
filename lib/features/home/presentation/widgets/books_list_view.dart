@@ -53,6 +53,8 @@ class _BooksListViewState extends State<BooksListView> {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.separated(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        physics: BouncingScrollPhysics(),
         controller: _scrollController,
         padding: EdgeInsets.all(1.sp),
         itemBuilder: (context, index) {
