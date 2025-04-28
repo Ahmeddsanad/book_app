@@ -14,7 +14,7 @@ class BookCoverImage extends StatelessWidget {
           topLeft: Radius.circular(12.r),
           bottomLeft: Radius.circular(12.r),
         ),
-        child: CachedNetworkImage(imageUrl: imageUrl, fit: BoxFit.cover),
+        child: CachedNetworkImage(imageUrl: imageUrl, fit: BoxFit.fill),
       ),
     );
   }

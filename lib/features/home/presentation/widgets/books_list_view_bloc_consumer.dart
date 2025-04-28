@@ -3,16 +3,19 @@
 part of '../home.dart';
 
 class BookListViewBlocConsumer extends StatelessWidget {
-  const BookListViewBlocConsumer({super.key});
+  BookListViewBlocConsumer({super.key});
+
+  final List<BookEntity> books = [];
 
   @override
   Widget build(BuildContext context) {
-    final List<BookEntity> books = [];
     return BlocConsumer<HomeCubit, HomeState>(
       listener: (context, state) {
         if (state is BooksSuccessState) {
-          books.addAll(state.books);
+          books.clear(); // Clear old books before adding new ones
+          books.addAll(state.books); // Add the new books list
         }
+
         if (state is BooksFailurePaginationState) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.errMessage)));
         }
@@ -21,7 +24,9 @@ class BookListViewBlocConsumer extends StatelessWidget {
         if (state is HomeInitial || state is BooksLoadingState) {
           return BooksListViewLoading();
         }
+
         if (state is BooksSuccessState ||
+            state is BooksSearchState ||
             state is BooksFailurePaginationState ||
             state is BookDescriptionExpanded ||
             state is BooksLoadingPaginationState) {
@@ -31,7 +36,7 @@ class BookListViewBlocConsumer extends StatelessWidget {
             child: Text(state.errMessage, style: TextStyles.textStyle24DarkGraySemiBold),
           );
         } else {
-          return const SizedBox.shrink();
+          return const SizedBox.shrink(); // Return empty widget if no relevant state
         }
       },
     );

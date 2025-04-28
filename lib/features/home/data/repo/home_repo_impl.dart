@@ -10,12 +10,15 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl(this._homeRemoteDataSource);
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchBooks({int page = 1}) async {
+  Future<Either<Failure, List<BookEntity>>> fetchBooks({int page = 1, String? query}) async {
     try {
-      final List<BookEntity> books = await _homeRemoteDataSource.fetchBooks(page: page);
+      final List<BookEntity> books = await _homeRemoteDataSource.fetchBooks(
+        page: page,
+        query: query,
+      );
       return Right(books);
     } catch (e) {
-      return Left(e as Failure); // The cast here might be problematic
+      return Left(ServerFailure(e.toString()));
     }
   }
 }

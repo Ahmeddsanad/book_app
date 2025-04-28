@@ -7,31 +7,23 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           'Nagwa Books',
-          style: TextStyles.textStyle24DarkGraySemiBold.copyWith(
-            fontFamily: 'BebasNeue',
-          ),
+          style: TextStyles.textStyle24DarkGraySemiBold.copyWith(fontFamily: 'BebasNeue'),
         ),
-        Container(
-          width: 40.w,
-          height: 40.h,
-          decoration: BoxDecoration(
-            color: ColorsManager.lightGray,
-            borderRadius: BorderRadius.circular(12.r),
-            boxShadow: [
-              BoxShadow(
-                offset: const Offset(0, 0),
-                blurRadius: 2,
-                color: Colors.black.withOpacity(0.3),
-                blurStyle: BlurStyle.outer,
-              ),
-            ],
+        verticalSpacer(10.h),
+        TextFormField(
+          controller: context.read<HomeCubit>().searchController,
+          onFieldSubmitted: (value) => context.read<HomeCubit>().onSearchChanged(),
+          decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.r)),
+            hintText: 'Search',
+            prefixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
           ),
-          child: Icon(FontAwesomeIcons.magnifyingGlass),
         ),
       ],
     );

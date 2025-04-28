@@ -8,6 +8,8 @@ final class BookDescriptionExpanded extends HomeState {}
 
 final class BooksLoadingState extends HomeState {}
 
+final class BooksSearchState extends HomeState {}
+
 final class BooksLoadingPaginationState extends HomeState {}
 
 final class BooksFailurePaginationState extends HomeState {

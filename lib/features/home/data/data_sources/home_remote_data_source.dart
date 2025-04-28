@@ -8,7 +8,7 @@ import 'package:book_app/features/home/domain/entities/book_entity.dart';
 import 'package:dio/dio.dart';
 
 abstract class HomeRemoteDataSource {
-  Future<List<BookEntity>> fetchBooks({int page = 1});
+  Future<List<BookEntity>> fetchBooks({int page = 1, String? query});
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -17,17 +17,19 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   HomeRemoteDataSourceImpl(this._apiService);
 
   @override
-  Future<List<BookEntity>> fetchBooks({int page = 1}) async {
+  Future<List<BookEntity>> fetchBooks({int page = 1, String? query}) async {
     try {
-      final response = await _apiService.get(endPoint: '${ApiConstants.books}?page=$page');
+      final response = await _apiService.get(
+        endPoint:
+            '${ApiConstants.books}?page=$page${query != null && query.isNotEmpty ? '&search=${Uri.encodeQueryComponent(query)}' : ''}',
+      );
       return getBooksList(response);
     } on DioException catch (e) {
       log('DioError during fetchBooks: $e');
       throw ServerFailure.fromDioError(e);
     } catch (e) {
-      // Log other errors, but don't necessarily treat them as ServerFailures
       log('Error during fetchBooks (non-DioError): $e');
-      rethrow; // Re-throw the error so the repository can handle it
+      rethrow;
     }
   }
 }
