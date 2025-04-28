@@ -31,13 +31,25 @@ A mobile application that allows users to browse and search for books with a res
 ### 9. **get_it**
    - **Purpose**: A simple service locator for Dart and Flutter that handles dependency injection, making it easier to manage dependencies and improve testability in the app.
 
-## Project Setup
+## 🚀 Project Setup
 
-- **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/book_app.git
-   cd book_app
+```bash
+# Clone the Repository
+git clone https://github.com/Ahmeddsanad/book_app.git
+cd book_app
 
+# Install Dependencies
+flutter pub get
+
+# Run the Application
+flutter run
+
+# (Optional) For iOS only
+cd ios
+pod install
+cd ..
+flutter run
+```
 ## Screens of the App
 
 ### 1. **Native Splash Screen (Android & iOS)**
