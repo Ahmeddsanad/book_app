@@ -48,24 +48,24 @@ A mobile application that allows users to browse and search for books with a res
 ### 2. **Onboarding Screen**
 
    - The onboarding screen provides an introduction to the app and its features. It is displayed when the app is first launched and helps users understand the app's functionality. The onboarding process is designed to be visually engaging and informative, guiding users through the initial setup.
-<img src="https://github.com/user-attachments/assets/7744d177-bcd0-4155-a7c6-9aa4c12da92b" width="600"/>
+<img src="https://github.com/user-attachments/assets/7744d177-bcd0-4155-a7c6-9aa4c12da92b" width="300"/>
 
 ### 3. **Initial Home Screen**
 
    - The home screen displays a list of books fetched from an API. The user can view book details such as the title, author, and cover image. It is designed to be clean and user-friendly, offering quick access to browse through available books.
-<img src="https://github.com/user-attachments/assets/887a9a13-b19f-4a4d-8520-e8e6dfd46344" width="600"/>
+<img src="https://github.com/user-attachments/assets/887a9a13-b19f-4a4d-8520-e8e6dfd46344" width="300"/>
 
 ### 4. **Pagination in Home Screen (Scrolling Down)**
 
    - The home screen supports pagination. As the user scrolls down, more books are loaded automatically. The pagination logic ensures that the app remains responsive and doesn't load excessive amounts of data at once. This is achieved by utilizing the `flutter_bloc` package to manage the loading states and book retrieval.
-<img src="https://github.com/user-attachments/assets/040235d0-9464-490f-8e1a-46203815bc46" width="600"/>
+<img src="https://github.com/user-attachments/assets/040235d0-9464-490f-8e1a-46203815bc46" width="300"/>
 
 ### 5. **Search Functionality**
 
    - The app allows users to search for books by title or author. As the user types in the search bar, a debounce mechanism is used to prevent unnecessary API calls, ensuring that search results are updated after a short delay (500 milliseconds). The search results are displayed dynamically below the search input.
-<img src="https://github.com/user-attachments/assets/8cd15f63-5b4c-4c7b-a496-2077bc4f625b" width="600"/>
+<img src="https://github.com/user-attachments/assets/8cd15f63-5b4c-4c7b-a496-2077bc4f625b" width="300"/>
 
 ### 6. **Expanded Summary of a Book**
 
    - Each book has a summary section that can be expanded or collapsed. This is handled through a toggle mechanism. When a user taps on a book's summary, it expands to reveal a more detailed description. The expansion and collapse of the summary are managed with the `flutter_bloc` state management solution, providing a smooth and interactive experience.
-<img src="https://github.com/user-attachments/assets/e304742e-2ef9-4a9b-9d2e-ac215b7ba331" width="600"/>
+<img src="https://github.com/user-attachments/assets/e304742e-2ef9-4a9b-9d2e-ac215b7ba331" width="300"/>
