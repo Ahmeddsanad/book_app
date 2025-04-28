@@ -1,6 +1,6 @@
 # Book App
 
-A mobile application that allows users to browse and search for books with a responsive UI, offline image caching, and smooth animations. The app uses several packages to manage dependencies, state, UI responsiveness, and HTTP requests, enhancing the user experience on both Android and iOS platforms.
+A mobile application that allows users to browse and search for books with a responsive UI and smooth animations. The app uses several packages to manage dependencies, state, UI responsiveness, and HTTP requests, enhancing the user experience on both Android and iOS platforms.
 
 ## Packages Used
 
@@ -69,3 +69,9 @@ A mobile application that allows users to browse and search for books with a res
 
    - Each book has a summary section that can be expanded or collapsed. This is handled through a toggle mechanism. When a user taps on a book's summary, it expands to reveal a more detailed description. The expansion and collapse of the summary are managed with the `flutter_bloc` state management solution, providing a smooth and interactive experience.
 <img src="https://github.com/user-attachments/assets/e304742e-2ef9-4a9b-9d2e-ac215b7ba331" width="300"/>
+
+## **Application Icon**
+
+The application’s launcher icon has been customized and changed from the default Flutter icon.
+This was done to give the app a more polished and branded appearance.
+![image](https://github.com/user-attachments/assets/44a4c6a4-3d33-49e7-aecf-f54f87bd389c)
