@@ -43,7 +43,7 @@ A mobile application that allows users to browse and search for books with a res
 ### 1. **Native Splash Screen (Android & iOS)**
 
    - When the app is launched, a smooth native splash screen is displayed on both Android and iOS platforms. This splash screen is managed using the `flutter_native_splash` package and provides a seamless transition as the app loads.
-<img src="https://github.com/user-attachments/assets/863ee1da-ad02-4cb3-aa07-1a46d57487b3" width="600"/>
+<img src="https://github.com/user-attachments/assets/863ee1da-ad02-4cb3-aa07-1a46d57487b3" width="300"/>
 
 ### 2. **Onboarding Screen**
 
