@@ -85,5 +85,7 @@ flutter run
 ## **Application Icon**
 
 The application’s launcher icon has been customized and changed from the default Flutter icon.
+
 This was done to give the app a more polished and branded appearance.
+
 ![image](https://github.com/user-attachments/assets/44a4c6a4-3d33-49e7-aecf-f54f87bd389c)
